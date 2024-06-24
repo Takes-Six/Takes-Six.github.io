@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #121212;
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Ridotto il padding per evitare overflow */
+    background: #1f1f1f;
+    border-bottom: 1px solid #333;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease;
+    box-sizing: border-box; /* Assicurarsi che il padding non causi overflow */
+}
+
+header .logo {
+    max-width: 50px;
+    transition: transform 0.3s ease;
+}
+
+header .logo:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    display: flex;
+    gap: 15px; /* Usa gap per lo spazio tra gli elementi */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #007bff;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    text-align: center;
+    padding: 150px 20px;
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    transition: background 0.3s ease;
+    margin-top: 60px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+.container {
+    padding: 40px 20px;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-in-out;
+}
+
+.projects ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.projects ul li {
+    background: #1f1f1f;
+    margin: 10px 0;
+    padding: 20px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.projects ul li:hover {
+    transform: translateX(10px);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1f1f1f;
+    border-top: 1px solid #333;
+    transition: background 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
