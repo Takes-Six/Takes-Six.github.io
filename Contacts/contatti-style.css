@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #121212;
+    color: #fff;
+    transition: background 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #1f1f1f;
+    border-bottom: 1px solid #333;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease;
+    box-sizing: border-box;
+}
+
+header .logo {
+    max-width: 50px;
+    transition: transform 0.3s ease;
+    border-radius: 10%;
+}
+
+header .logo:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #007bff;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.container {
+    padding: 10% 30%;
+    flex: 1; /* Ensure the container takes up the available space */
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-in-out;
+}
+
+.contacts {
+    padding: 40px 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    font-size: 18px;
+}
+
+form input, form textarea, form button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background: #1f1f1f;
+    color: #fff;
+    font-size: 16px;
+}
+
+form button {
+    cursor: pointer;
+    background: #007bff;
+    border: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px; /* Aumenta lo spazio di padding */
+    background: #1f1f1f;
+    border-top: 1px solid #333;
+    transition: background 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
